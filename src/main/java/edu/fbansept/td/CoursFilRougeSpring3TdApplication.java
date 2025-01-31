@@ -1,56 +1,13 @@
-package edu.cesi.negosud.security;
+package edu.fbansept.td;
 
-import edu.cesi.negosud.model.Client;
-import edu.cesi.negosud.model.Employe;
-import edu.cesi.negosud.model.Utilisateur;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.Collection;
-import java.util.List;
+@SpringBootApplication
+public class CoursFilRougeSpring3TdApplication {
 
-public class AppUserDetails implements UserDetails {
-
-    private Client client;
-    private Employe employe;
-
-    private String email;
-    private String password;
-
-    public AppUserDetails(Client client) {
-        this.client = client;
-        this.email = client.getEmail();
-        this.password = client.getPassword();
+    public static void main(String[] args) {
+        SpringApplication.run(CoursFilRougeSpring3TdApplication.class, args);
     }
 
-    public AppUserDetails(Employe employe) {
-        this.employe = employe;
-        this.email = employe.getEmail();
-        this.password = employe.getPassword();
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-
-         return client != null
-                 ? List.of(new SimpleGrantedAuthority("ROLE_CLIENT"))
-                 : List.of(new SimpleGrantedAuthority("ROLE_VENDEUR"));
-
-    }
-
-    @Override
-    public String getPassword() {
-        return password;
-    }
-
-    @Override
-    public String getUsername() {
-        return email;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return actif;
-    }
 }
