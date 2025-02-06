@@ -16,6 +16,7 @@ public class CoursFilRougeSpring3TdApplication {
      */
     public static void main(String[] args) {
         SpringApplication.run(CoursFilRougeSpring3TdApplication.class, args);
+        System.out.println("instruction mal indentée");
     }
 
 }
