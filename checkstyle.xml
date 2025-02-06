@@ -20,7 +20,7 @@
 
     <property name="charset" value="UTF-8"/>
 
-    <property name="severity" value="${org.checkstyle.google.severity}" default="warning"/>
+    <property name="severity" value="${org.checkstyle.google.severity}" default="error"/>
 
     <property name="fileExtensions" value="java, properties, xml"/>
     <!-- Excludes all 'module-info.java' files              -->
@@ -287,7 +287,7 @@
             <property name="basicOffset" value="4"/>
             <property name="braceAdjustment" value="4"/>
             <property name="caseIndent" value="4"/>
-            <property name="throwsIndent" value="8"/>
+            <property name="throwsIndent" value="4"/>
             <property name="lineWrappingIndentation" value="8"/>
             <property name="arrayInitIndent" value="4"/>
         </module>
